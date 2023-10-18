@@ -12,8 +12,8 @@ export async function POST(request: NextRequest) {
 
 export async function GET() {
 	await connectMongoDB();
-	//const topics = await Topic.find();
-	return NextResponse.json({ topics: "apagar" });
+	const topics = await Topic.find();
+	return NextResponse.json({ topics }, {status: 200});
 }
 
 export async function DELETE(request: NextRequest) {
